@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - WhichOne</title>
+    <link rel="stylesheet" href="connexion.css" />
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <a href="créersondageHTML.html"><i class="far fa-plus-square"></i> Créer</a>
+            <a href="connexion.html"><i class="fas fa-link"></i> Se connecter</a>
+            <a href="WhichOneHTML.html"><i class="far fa-user"></i> Profil</a>
+        </div>
+    </nav>
+
+
+    <div id="welcome">
+        <h3> Bienvenue sur <span id="Which">Which</span><span id="One">One</span></h3>
+        <div id="logo_container"><img src="logo.png" alt="logo" id="logo_img"></div>
+    </div>
+
+    <div id="info">
+
+        <div class="change">
+            <div id="move"></div>
+            <input type="button" value="Se connecter" class="changebtn" id="connexion"/>
+            <input type="button" value="S'enregistrer" class="changebtn" id="enregistrer"/>
+        </div>
+        <div id="formdiv">
+            <form method="post" action ="#" id="loginform">
+                <div class="divchamps">
+                    <input type="text" name="nom_util" required placeholder="Nom d'utilisateur" class="champs">
+                    <input type="password" name="mdp" required placeholder="Mot de passe" class="champs">
+                    <input type="checkbox" name="rester_co" id="rester_co"><label for="rester_co" id="confi_text">Rester connecté</label>
+                </div>
+
+                <a href="#" id="pbconnexion"> Je rencontre des problèmes pour me connecter</a>
+
+                <input type="submit" value="Se connecter" id="connecterbtn" class="fin_btn"/>
+            </form>
+
+            <form method="post" action ="#" id="registerform">
+                <input type="text" name="Nom" required placeholder="Nom" class="champs_enre">
+                <input type="text" name="Prénom" required placeholder="Prénom" class="champs_enre">
+                <input type="email" name="email" required placeholder="Addresse e-mail" class="champs_enre">
+                <label for="date_naissance">Date de naissance:</label>
+                <input type="date" name="date_naissance" required class="champs_enre" id="date_naissance">
+                <input type="text" name="nom_util" required placeholder="Nom d'utilisateur" class="champs_enre">
+                <input type="password" name="mdp" required placeholder="Mot de passe" class="champs_enre">
+                <input type="confirmpassword" name="confirmmdp" required placeholder="Confirmation du mot de passe" class="champs_enre">
+                <div id="chartes">
+                    <input type="checkbox" name="confidentialité" id="confi_btn" required checked><label for="confi_btn" id="confi_text">J'accèpte les chartes de confidentialité.<a href="#">En savoir plus.</a></label>
+                </div>
+
+                <input type="submit" value="S'enregistrer" id="enrebtn" class="fin_btn"/>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/7827c1e29f.js" crossorigin="anonymous">
+
+    </script>
+
+    <script>
+
+        const se_connecter = document.getElementById("connexion");
+        const s_enregistrer = document.getElementById("enregistrer");
+        const move_div = document.getElementById("move");
+        const formdiv = document.getElementById("formdiv");
+        const move = document.getElementById("move");
+        const info = document.getElementById("info");
+        const change_div = document.querySelector(".change")
+
+        s_enregistrer.addEventListener("click", function(){
+            move_div.style.transform = "translateX(110px)";
+            formdiv.style.transform = "translateX(-350px)";
+            info.style.boxShadow = "0 0 20px 9px #FF5722";
+            move.style.background = "linear-gradient(to left, #fc4a1a, #f7b733)";
+            change_div.style.boxShadow = "0 0 20px 9px #ff61241f";
+        });
+
+        se_connecter.addEventListener("click", function(){
+            move_div.style.transform = "translateX(0)";
+            formdiv.style.transform = "translateX(0)";
+            info.style.boxShadow = "0 0 20px 9px #1bb0dc";
+            move.style.background = "linear-gradient(to right, #0d548d, #1cb5e0)";
+            change_div.style.boxShadow = "0 0 25px -10px #1bb0dc";
+        });
+
+
+
+    </script>
+</body>
+</html>
